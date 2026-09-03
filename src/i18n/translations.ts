@@ -173,7 +173,7 @@ export const translations: Record<Language, TranslationKeys> = {
     meta: {
       title: 'StBVV 费用计算器',
       description:
-        '根据德国《税务顾问报酬条例》(StBVV 2025) 在线计算税务顾问费用——年度决算、增值税、企业所得税和营业税。',
+        '根据德国《税务顾问报酬条例》(StBVV 2025) 在线计算税务顾问费用——年的报表、增值税、企业所得税和营业税。',
     },
     language: {
       de: 'Deutsch',
@@ -183,7 +183,7 @@ export const translations: Record<Language, TranslationKeys> = {
     hero: {
       eyebrow: 'StBVV 2025 · 费用计算器',
       title: '计算税务顾问费用',
-      text: '依据《税务顾问报酬条例》(StBVV) 计算年度决算、增值税申报、企业所得税申报和营业税申报的费用。',
+      text: '依据《税务顾问报酬条例》(StBVV) 计算年的报表、增值税申报、企业所得税申报和营业税申报的费用。',
       loadExample: '加载示例',
     },
     sections: {
@@ -204,7 +204,7 @@ export const translations: Record<Language, TranslationKeys> = {
       },
       bilanzsumme: {
         label: '资产负债表总额',
-        hint: '年度决算标的额：资产负债表总额与营业额的平均值（最低 30.000 €）',
+        hint: '年的报表标的额：资产负债表总额与营业额的平均值（最低 30.000 €）',
       },
       gewerbeertrag: {
         label: '营业收益',
@@ -216,14 +216,14 @@ export const translations: Record<Language, TranslationKeys> = {
       },
     },
     services: {
-      jahresabschluss: '年度决算（资产负债表/损益表）',
+      jahresabschluss: '年的报表（资产负债表/损益表）',
       umsatzsteuer: '增值税申报',
       koerperschaftsteuer: '企业所得税申报',
       gewerbesteuer: '营业税申报',
     },
     zehntelRanges: {
       jahresabschluss: {
-        label: '年度决算',
+        label: '年的报表',
         hint: '法定范围：10/10 至 40/10 · 中等费用：25/10',
       },
       umsatzsteuer: {
@@ -259,11 +259,11 @@ export const translations: Record<Language, TranslationKeys> = {
     steps: [
       {
         title: '确定标的额',
-        text: '年度决算：资产负债表总额与营业额的平均值（最低 30.000 €）。增值税：营业额的 10%。企业所得税和营业税：分别为应税收入和营业收益（各最低 8.000 €）。',
+        text: '年的报表：资产负债表总额与营业额的平均值（最低 30.000 €）。增值税：营业额的 10%。企业所得税和营业税：分别为应税收入和营业收益（各最低 8.000 €）。',
       },
       {
         title: '查表确定全额费用',
-        text: '税务申报适用 A 表，年度决算适用 B 表（StBVV 2025）。若标的额介于两档之间，适用较高一档（§ 13 StBVV）。',
+        text: '税务申报适用 A 表，年的报表适用 B 表（StBVV 2025）。若标的额介于两档之间，适用较高一档（§ 13 StBVV）。',
       },
       {
         title: '乘以十分率',

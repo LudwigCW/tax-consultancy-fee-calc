@@ -75,6 +75,7 @@ function App() {
               id="umsatz"
               label={t.inputs.umsatz.label}
               value={inputs.umsatz}
+              locale={locale}
               onChange={(value) => updateInput('umsatz', value)}
               hint={t.inputs.umsatz.hint}
             />
@@ -82,6 +83,7 @@ function App() {
               id="bilanzsumme"
               label={t.inputs.bilanzsumme.label}
               value={inputs.bilanzsumme}
+              locale={locale}
               onChange={(value) => updateInput('bilanzsumme', value)}
               hint={t.inputs.bilanzsumme.hint}
             />
@@ -89,6 +91,7 @@ function App() {
               id="gewerbeertrag"
               label={t.inputs.gewerbeertrag.label}
               value={inputs.gewerbeertrag}
+              locale={locale}
               onChange={(value) => updateInput('gewerbeertrag', value)}
               hint={t.inputs.gewerbeertrag.hint}
             />
@@ -96,6 +99,7 @@ function App() {
               id="zvE"
               label={t.inputs.zuVersteuerndesEinkommen.label}
               value={inputs.zuVersteuerndesEinkommen}
+              locale={locale}
               onChange={(value) => updateInput('zuVersteuerndesEinkommen', value)}
               hint={t.inputs.zuVersteuerndesEinkommen.hint}
             />
