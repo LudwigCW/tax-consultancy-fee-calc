@@ -33,12 +33,15 @@ npm run preview
 
 ## Deployment auf Render
 
-1. Repository auf GitHub/GitLab pushen
-2. In Render: **New → Static Site**
-3. Build Command: `npm install && npm run build`
-4. Publish Directory: `dist`
+Ausführliche Schritt-für-Schritt-Anleitung: **[DEPLOY.md](./DEPLOY.md)**
 
-Alternativ kann die mitgelieferte `render.yaml` für ein Blueprint-Deployment genutzt werden.
+Kurzfassung:
+
+1. `gh auth login` (GitHub anmelden)
+2. `gh repo create tax-consultancy-fee-calc --public --source=. --remote=origin --push`
+3. Auf [render.com](https://render.com): **New → Blueprint** → Repository wählen → `render.yaml` wird automatisch erkannt
+
+Build Command: `npm install && npm run build` · Publish Directory: `dist`
 
 ## Hinweis
 
