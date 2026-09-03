@@ -55,6 +55,51 @@ input {
   line-height: 1.1;
 }
 
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.language-switcher {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+}
+
+.lang-button {
+  border: 0;
+  background: transparent;
+  color: #475569;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+}
+
+.lang-button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+}
+
+.panel-header + .panel-intro {
+  margin-top: -0.25rem;
+}
+
 .hero-text {
   margin: 0;
   max-width: 52rem;
@@ -277,6 +322,20 @@ tbody tr:last-child td {
 @media (max-width: 720px) {
   .hero {
     flex-direction: column;
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .language-switcher {
+    align-self: flex-start;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .page {

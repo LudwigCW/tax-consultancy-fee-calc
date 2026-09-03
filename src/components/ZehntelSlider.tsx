@@ -5,6 +5,7 @@ interface ZehntelSliderProps {
   min: number;
   max: number;
   value: number;
+  locale: string;
   onChange: (value: number) => void;
 }
 
@@ -15,13 +16,14 @@ export function ZehntelSlider({
   min,
   max,
   value,
+  locale,
   onChange,
 }: ZehntelSliderProps) {
   return (
     <div className="zehntel-field">
       <div className="zehntel-header">
         <label htmlFor={id}>{label}</label>
-        <strong>{value % 1 === 0 ? `${value}/10` : `${value.toLocaleString('de-DE')}/10`}</strong>
+        <strong>{value % 1 === 0 ? `${value}/10` : `${value.toLocaleString(locale)}/10`}</strong>
       </div>
       <input
         id={id}

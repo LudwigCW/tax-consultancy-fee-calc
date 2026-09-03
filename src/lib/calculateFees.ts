@@ -16,7 +16,6 @@ export interface Zehntelsaetze {
 
 export interface FeeLineItem {
   id: keyof Zehntelsaetze;
-  label: string;
   gegenstandswert: number;
   volleGebuehr: number;
   zehntelsatz: number;
@@ -74,35 +73,30 @@ export function calculateFees(
 
   const definitions: Array<{
     id: keyof Zehntelsaetze;
-    label: string;
     gegenstandswert: number;
     volleGebuehr: number;
     zehntelsatz: number;
   }> = [
     {
       id: 'jahresabschluss',
-      label: 'Jahresabschluss (Bilanz/GuV)',
       gegenstandswert: jahresabschlussGegenstandswert,
       volleGebuehr: getTableBFee(jahresabschlussGegenstandswert),
       zehntelsatz: zehntelsaetze.jahresabschluss,
     },
     {
       id: 'umsatzsteuer',
-      label: 'Umsatzsteuererklärung',
       gegenstandswert: umsatzsteuerGegenstandswert,
       volleGebuehr: getTableAFee(umsatzsteuerGegenstandswert),
       zehntelsatz: zehntelsaetze.umsatzsteuer,
     },
     {
       id: 'koerperschaftsteuer',
-      label: 'Körperschaftsteuererklärung',
       gegenstandswert: koerperschaftsteuerGegenstandswert,
       volleGebuehr: getTableAFee(koerperschaftsteuerGegenstandswert),
       zehntelsatz: zehntelsaetze.koerperschaftsteuer,
     },
     {
       id: 'gewerbesteuer',
-      label: 'Gewerbesteuererklärung',
       gegenstandswert: gewerbesteuerGegenstandswert,
       volleGebuehr: getTableAFee(gewerbesteuerGegenstandswert),
       zehntelsatz: zehntelsaetze.gewerbesteuer,
@@ -143,34 +137,11 @@ export const DEFAULT_ZEHNTELSAETZE: Zehntelsaetze = {
   gewerbesteuer: 3.5,
 };
 
-export const ZEHNTEL_RANGES: Record<
-  keyof Zehntelsaetze,
-  { min: number; max: number; label: string; hint: string }
-> = {
-  jahresabschluss: {
-    min: 10,
-    max: 40,
-    label: 'Jahresabschluss',
-    hint: 'Gesetzlicher Rahmen: 10/10 bis 40/10 · Mittelgebühr: 25/10',
-  },
-  umsatzsteuer: {
-    min: 1,
-    max: 8,
-    label: 'Umsatzsteuererklärung',
-    hint: 'Gesetzlicher Rahmen: 1/10 bis 8/10 · Mittelgebühr: 4,5/10',
-  },
-  koerperschaftsteuer: {
-    min: 2,
-    max: 8,
-    label: 'Körperschaftsteuererklärung',
-    hint: 'Gesetzlicher Rahmen: 2/10 bis 8/10 · Mittelgebühr: 5/10',
-  },
-  gewerbesteuer: {
-    min: 1,
-    max: 6,
-    label: 'Gewerbesteuererklärung',
-    hint: 'Gesetzlicher Rahmen: 1/10 bis 6/10 · Mittelgebühr: 3,5/10',
-  },
+export const ZEHNTEL_RANGES: Record<keyof Zehntelsaetze, { min: number; max: number }> = {
+  jahresabschluss: { min: 10, max: 40 },
+  umsatzsteuer: { min: 1, max: 8 },
+  koerperschaftsteuer: { min: 2, max: 8 },
+  gewerbesteuer: { min: 1, max: 6 },
 };
 
 export const EXAMPLE_INPUTS: CalculatorInputs = {
